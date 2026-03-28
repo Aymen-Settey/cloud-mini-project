@@ -1,0 +1,143 @@
+<mxfile host="65bd71144e">
+    <diagram id="architecture" name="Architecture">
+        <mxGraphModel dx="968" dy="910" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="network" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;dashed=1;dashPattern=8 4;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="120" width="1050" height="580" as="geometry"/>
+                </mxCell>
+                <mxCell id="network_label" value="&lt;b&gt;Docker Network: app-network&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="130" width="230" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="client" value="&lt;b&gt;Client&lt;/b&gt;&lt;br&gt;Browser / curl" style="shape=actor;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="510" y="20" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="nginx" value="&lt;b&gt;Nginx&lt;/b&gt;&lt;br&gt;Reverse Proxy&lt;br&gt;&lt;font color=&quot;#999999&quot;&gt;:80&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="470" y="160" width="160" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="app_group" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;dashed=1;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="290" width="560" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="app_label" value="&lt;b&gt;Flask App Instances (scalable)&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="295" width="220" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="app1" value="&lt;b&gt;Flask App&lt;/b&gt;&lt;br&gt;Instance 1&lt;br&gt;&lt;font color=&quot;#999999&quot;&gt;:5000&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="290" y="325" width="140" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="app2" value="&lt;b&gt;Flask App&lt;/b&gt;&lt;br&gt;Instance 2&lt;br&gt;&lt;font color=&quot;#999999&quot;&gt;:5000&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="325" width="140" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="app3" value="&lt;b&gt;Flask App&lt;/b&gt;&lt;br&gt;Instance 3&lt;br&gt;&lt;font color=&quot;#999999&quot;&gt;:5000&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="670" y="325" width="140" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="postgres" value="&lt;b&gt;PostgreSQL&lt;/b&gt;&lt;br&gt;postgres:14&lt;br&gt;&lt;font color=&quot;#999999&quot;&gt;:5432&lt;/font&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="480" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="pg_vol" value="📁 db-data" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="310" y="560" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="redis" value="&lt;b&gt;Redis&lt;/b&gt;&lt;br&gt;redis:7-alpine&lt;br&gt;&lt;font color=&quot;#999999&quot;&gt;:6379&lt;/font&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="660" y="480" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="redis_vol" value="📁 redis-data" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#b85450;" parent="1" vertex="1">
+                    <mxGeometry x="685" y="560" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="prometheus" value="&lt;b&gt;Prometheus&lt;/b&gt;&lt;br&gt;Metrics Collector&lt;br&gt;&lt;font color=&quot;#999999&quot;&gt;:9090&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="325" width="150" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="prom_vol" value="📁 prometheus-data" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#9673a6;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="390" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="grafana" value="&lt;b&gt;Grafana&lt;/b&gt;&lt;br&gt;Dashboards&lt;br&gt;&lt;font color=&quot;#999999&quot;&gt;:3000&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="480" width="150" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="graf_vol" value="📁 grafana-data" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#9673a6;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="545" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="cicd" value="&lt;b&gt;GitHub Actions&lt;/b&gt;&lt;br&gt;CI/CD Pipeline" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#333333;fontSize=12;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="920" y="160" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="dockerhub" value="&lt;b&gt;Docker Hub&lt;/b&gt;&lt;br&gt;Image Registry" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="920" y="280" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#6c8ebf;" parent="1" source="client" target="nginx" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1_label" value="HTTP :80" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontColor=#6c8ebf;" parent="e1" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#82b366;" parent="1" source="nginx" target="app1" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#82b366;" parent="1" source="nginx" target="app2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e3_label" value="Load Balance" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontColor=#82b366;" parent="e3" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#82b366;" parent="1" source="nginx" target="app3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#6c8ebf;" parent="1" source="app_group" target="postgres" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="361" y="420" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e5_label" value="SQL" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontColor=#6c8ebf;" parent="e5" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#b85450;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="app_group" target="redis" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="740" y="420" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e8_label" value="Cache" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontColor=#b85450;" parent="e8" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#9673a6;dashed=1;dashPattern=8 4;" parent="1" source="prometheus" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="270" y="358" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e11_label" value="Scrape /metrics" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontColor=#9673a6;" parent="e11" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint x="-16" y="-50" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#9673a6;" parent="1" source="grafana" target="prometheus" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e12_label" value="Query" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontColor=#9673a6;" parent="e12" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#333333;" parent="1" source="cicd" target="dockerhub" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e13_label" value="Push Image" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontColor=#333333;" parent="e13" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#333333;dashed=1;entryX=1.009;entryY=0.615;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="dockerhub" target="app_group" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e14_label" value="Pull Image" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontColor=#333333;" parent="e14" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

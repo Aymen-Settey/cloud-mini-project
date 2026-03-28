@@ -24,5 +24,9 @@ Thumbs.db
 # Docker
 docker-compose.override.yml
 
+# Images
+*.png
+enonce.md
+rapport.tex
 # Data (managed by Docker volumes)
 data/
